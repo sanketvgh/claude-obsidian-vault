@@ -1,4 +1,6 @@
-# Sanket Space (Obsidian Vault)
+# IMF Obsidian Template
+
+Repo: https://github.com/sanketvgh/imf-obsidian-template
 
 Always read the framework spec in `Docs/IMF Framework/` first, before doing any work in this vault. It defines the note types, folder roles, property schema, and template conventions this vault follows — treat it as the source of truth for how notes should be structured. The spec is split into five files, read in order:
 
