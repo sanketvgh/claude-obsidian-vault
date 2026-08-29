@@ -1,0 +1,10 @@
+# Obsidian personal/ephemeral state — not part of the template
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/appearance.json
+.obsidian/backlink.json
+.trash/
+
+# OS junk
+.DS_Store
+Thumbs.db
