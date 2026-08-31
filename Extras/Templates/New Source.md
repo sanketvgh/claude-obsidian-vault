@@ -10,10 +10,3 @@ tags: []
 ---
 # {{title}}
 
-## Summary (in my own words)
-
-## Key points
-- 
-
-## Notes → concepts to extract
-- [ ] Create/append [[ ]]
