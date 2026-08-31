@@ -1,18 +1,16 @@
-# IMF Obsidian Template
+# Obsidian Vault
 
-Repo: https://github.com/sanketvgh/imf-obsidian-template
+Vault rules (note types, folders, properties, linking, MOC timing) live in `.claude/rules/vault.md` and load automatically every session.
 
-Always read the framework spec in `Docs/IMF Framework/` first, before doing any work in this vault. It defines the note types, folder roles, property schema, and template conventions this vault follows — treat it as the source of truth for how notes should be structured. The spec is split into five files, read in order:
+## Working in this vault
+For any non-trivial request to capture, process, distill, connect, or map content (deciding note type, folder, atomicity, links, or MOC timing involves a judgment call), use the `note-pipeline` skill instead of editing vault files directly. It runs:
+- `note-writer` — decides stage/note type/folder/atomicity/links/MOC timing and writes the files
+- `python .claude/lint-vault.py` — deterministic schema/folder/link check
+- `note-reviewer` — reports the linter output and interrogates atomicity and over-engineering
 
-- `00 Overview.md` — what IMF is, its purpose, the problem it solves
-- `01 Principles & Concepts.md` — core principles and note-type definitions (Atomic Note, Concept Note, Source Note, MOC, Index, Home Note, Fluid Framework, Link)
-- `02 Implementation.md` — the 5-stage workflow, folder architecture, note types, properties, and linking/tag/MOC/folder strategy
-- `03 Templates.md` — the 5 note templates
-- `04 Reference.md` — data model, a worked example, implementation rules, common mistakes, limitations, framework diagram
+Trivial edits (typo fixes, an already-obvious single link) can be done directly — skip the pipeline for those.
 
-## Key conventions from that spec
-- Note types: Concept, Source, MOC, Home, Project (optional), Daily (optional).
-- Folders stage by *kind*, not topic: `+ Inbox` (capture), `Atlas` (concepts + MOCs), `Sources`, `Calendar`, `Efforts`, `Extras` (templates/attachments).
-- Templates live in `Extras/Templates`.
-- `status` is a metadata-menu Select field with fixed options: `Todo`, `In Progress`, `Done`. Never introduce other status values (e.g. `active`, `to-process`) — check `.obsidian/plugins/metadata-menu/data.json` `presetFields` before adding any new Select-backed property.
-- Organize topics with MOCs and links, never folders or topical tags.
+Writing style and structure rules live in `.claude/rules/note-writing.md` and load automatically whenever a note file is touched. Notes must read like the user's own writing, not generated text.
+
+## Folders
+`Concepts` (concepts + MOCs), `Sources`, `Daily` (capture, via dated daily notes), `Projects`, `Extras` (templates/attachments).

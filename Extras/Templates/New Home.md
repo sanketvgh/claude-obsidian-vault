@@ -1,12 +1,15 @@
 ---
 type: home
-created: 2026-08-29
+created: {{date:YYYY-MM-DD}}
 ---
 # Home
 
 ## Main Maps
+- [[ ]] 
+- [[ ]]
 
 ## Currently active
+- [[ ]]
 
 ## Entry points
-Capture: `Daily/`
+- Capture: `Daily/`
